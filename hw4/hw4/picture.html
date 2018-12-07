@@ -1,0 +1,23 @@
+{#Sam Westigard#}
+{#CST 205#}
+{#Provides image page with information on each image and link back to homepage#}
+
+{% extends 'bootstrap/base.html' %}
+
+{% block content %}
+
+    <h1>"{{ pTitle }}" by {{ pAuthor }}</h1>
+
+    <p>
+    <img src="{{ url_for('static', filename = ID + '.jpg') }}"/>
+    </p>
+
+    <p>
+    {{ pMode }} image {{ pFormat }} format with width {{ pWidth }} and height {{ pHeight }}.
+    </p>
+
+    <p>
+    <a href="{{ url_for('home') }}">Back to random gallery</a>
+    </p>
+
+{% endblock %}

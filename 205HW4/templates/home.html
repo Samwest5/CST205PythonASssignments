@@ -1,0 +1,49 @@
+{#Sam Westigard#}
+{#CST 205#}
+{#Provides home page with links to each image#}
+
+{% extends 'bootstrap/base.html' %}
+
+{% block content %}
+
+
+    <h1>Random Picture Gallery</h1>
+
+
+    <div>
+    <a href="{{ url_for('picture', pIndex = rand1, ID = info[rand1]['id']) }}">{{ info[rand1]['title']}}</a>
+    </div>
+
+    <div>
+    <a href="{{ url_for('picture', pIndex = rand1, ID = info[rand1]['id']) }}">
+    <img src="{{ url_for('static', filename = info[rand1]['id'] + '.jpg') }}"  vspace="30"/>
+    </a>
+    </div>
+
+
+
+    <div>
+    <a href="{{ url_for('picture', pIndex = rand2, ID = info[rand2]['id']) }}">{{ info[rand2]['title']}}</a>
+    </div>
+
+    <div>
+    <a href="{{ url_for('picture', pIndex = rand2, ID = info[rand2]['id']) }}">
+    <img src="{{ url_for('static', filename = info[rand2]['id'] + '.jpg') }}" vspace="30"/>
+    </a>
+    </div>
+
+
+
+    <div>
+    <a href="{{ url_for('picture', pIndex = rand3, ID = info[rand3]['id']) }}">{{ info[rand3]['title']}}</a>
+    </div>
+
+    <div>
+    <a href="{{ url_for('picture', pIndex = rand3, ID = info[rand3]['id']) }}">
+    <img src="{{ url_for('static', filename = info[rand3]['id'] + '.jpg') }}" vspace="30"/>
+    </a>
+    </div>
+
+
+{% endblock %}
+

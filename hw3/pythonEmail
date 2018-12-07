@@ -1,0 +1,28 @@
+import smtplib
+
+from email.message import EmailMessage
+
+import getpass
+
+try:
+    server = smtplib.SMTP('smtp.gmail.com')
+    server.ehlo()
+except:
+    print("Something went wrong")
+
+server.starttls()
+
+mypwd = getpass.getpass("Enter password")
+myEmail = "s.j.westigard@gmail.com"
+
+msg = EmailMessage()
+
+msg['Subject'] = "My great email"
+msg['From'] = myEmail
+msg['To'] = "s.j.westigard@gmail.com"
+msg.set_content("Hello!")
+
+with open('screen3.png', 'rb') as fp:
+    imgData = fp.read()
+
+msg.add_attachment(imgData, mainttype='image', subtype='png')
